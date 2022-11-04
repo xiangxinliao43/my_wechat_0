@@ -1,8 +1,15 @@
-
 import 'package:flutter/material.dart';
 
 main() {
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: homePage()));
+}
+
+class CardData {
+  String title;
+  String subTitle;
+  String imageUrl;
+
+  CardData(this.title, this.subTitle, this.imageUrl);
 }
 
 class homePage extends StatefulWidget {
@@ -13,12 +20,32 @@ class homePage extends StatefulWidget {
 }
 
 class _homePageState extends State<homePage> {
+  List<CardData> dataList = [
+    CardData("鼠鼠", "鼠鼠我啊，家里还蛮大的！",
+        "https://i0.hdslb.com/bfs/article/d8aed9b652e665c4099b12f2a83ff722ac922295.jpg@729w_762h_progressive.jpg"),
+    CardData("鼠鼠", "鼠鼠我啊，家里还蛮大的！",
+        "https://i0.hdslb.com/bfs/article/d8aed9b652e665c4099b12f2a83ff722ac922295.jpg@729w_762h_progressive.jpg"),
+    CardData("鼠鼠", "鼠鼠我啊，家里还蛮大的！",
+        "https://i0.hdslb.com/bfs/article/d8aed9b652e665c4099b12f2a83ff722ac922295.jpg@729w_762h_progressive.jpg"),
+    CardData("Cat", "你说的不是很合理！",
+        "https://i0.hdslb.com/bfs/article/4facf990da123bd93c3501f5c710eca467c7a840.jpg@777w_777h_progressive.jpg"),
+    CardData("约尔太太", "测试文本[笑]",
+        "https://i0.hdslb.com/bfs/article/eb33d019eac6d213cecd43793a2dcd5c9b19af06.jpg@942w_944h_progressive.jpg"),
+    CardData("阿尼亚", "今天带上你的作业来办公室。",
+        "https://i0.hdslb.com/bfs/article/00583bdd7c2fe72b97961a7a86327be3287ccb9f.jpg@507w_507h_progressive.jpg"),
+    CardData("峰子", "小峰，封校还要封几天啊？",
+        "http://www.cumt.edu.cn/_upload/article/images/31/74/38e8c26549e783e8f125b66cc3f0/2131d76b-4f33-49cf-aefe-09246ec049b9.jpg"),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white54,
-        title: const Text("飞信",style: TextStyle(color: Colors.black),),
+        title: const Text(
+          "飞信",
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
         actions: [
           IconButton(
@@ -43,575 +70,12 @@ class _homePageState extends State<homePage> {
       body: SingleChildScrollView(
         // 聊天列表
         child: Column(
-          children: [
-            // 以下为折叠内容：
-            // Row 鼠鼠
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  child: Center(
-                    child: Image.network(
-                        "https://i0.hdslb.com/bfs/article/d8aed9b652e665c4099b12f2a83ff722ac922295.jpg@729w_762h_progressive.jpg"),
-                  ),
-                  height: 70,
-                  width: 70,
-                  color: Colors.amberAccent,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      " 鼠鼠",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      " 鼠鼠我啊，家里还蛮大的！",
-                      style: TextStyle(color: Colors.pinkAccent),
-                    )
-                  ],
-                )
-              ],
-            ),
-            // Row 猫猫头
-            SizedBox(
-              height: 2,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            // Row Cat
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  child: Center(
-                    child: Image.network(
-                        "https://i0.hdslb.com/bfs/article/4facf990da123bd93c3501f5c710eca467c7a840.jpg@777w_777h_progressive.jpg"),
-                  ),
-                  height: 70,
-                  width: 70,
-                  color: Colors.amberAccent,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      " Cat",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      " 你说的不是很合理！",
-                      style: TextStyle(color: Colors.pinkAccent),
-                    )
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            // 太太
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  child: Center(
-                    child: Image.network(
-                        "https://i0.hdslb.com/bfs/article/eb33d019eac6d213cecd43793a2dcd5c9b19af06.jpg@942w_944h_progressive.jpg"),
-                  ),
-                  height: 70,
-                  width: 70,
-                  color: Colors.amberAccent,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      " 约尔太太",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      " 测试文本[笑]",
-                      style: TextStyle(color: Colors.blue),
-                    )
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            // 阿尼亚
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  child: Center(
-                    child: Image.network(
-                        "https://i0.hdslb.com/bfs/article/00583bdd7c2fe72b97961a7a86327be3287ccb9f.jpg@507w_507h_progressive.jpg"),
-                  ),
-                  height: 70,
-                  width: 70,
-                  color: Colors.amberAccent,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      " 阿尼亚",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      " 今天带上你的作业来办公室。",
-                      style: TextStyle(color: Colors.blue),
-                    )
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            // 峰子
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  child: Center(
-                    child: Image.network(
-                        "http://www.cumt.edu.cn/_upload/article/images/31/74/38e8c26549e783e8f125b66cc3f0/2131d76b-4f33-49cf-aefe-09246ec049b9.jpg"),
-                  ),
-                  height: 70,
-                  width: 70,
-                  color: Color.fromRGBO(0, 0, 244, 10),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      " 峰子",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      " 小峰，封校还要封几天啊？",
-                      style: TextStyle(color: Colors.blue),
-                    )
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Divider(
-              color: Colors.black87,
-            ),
-            // 1
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  child: Center(
-                    child: Image.network(
-                        "https://i0.hdslb.com/bfs/article/ffcdf252091508fb3e06b462d0f333134e07f90f.jpg@728w_896h_progressive.jpg"),
-                  ),
-                  height: 70,
-                  width: 70,
-                  color: Colors.amberAccent,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      " ？1 ？",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      " ？？？？？？？？？？",
-                      style: TextStyle(color: Colors.pinkAccent),
-                    )
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Divider(
-              color: Colors.black87,
-            ),
-            // 2
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  child: Center(
-                    child: Image.network(
-                        "https://i0.hdslb.com/bfs/article/ffcdf252091508fb3e06b462d0f333134e07f90f.jpg@728w_896h_progressive.jpg"),
-                  ),
-                  height: 70,
-                  width: 70,
-                  color: Colors.amberAccent,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      " ？2 ？",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      " ？？？？？？？？？？",
-                      style: TextStyle(color: Colors.pinkAccent),
-                    )
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Divider(
-              color: Colors.black87,
-            ),
-            // 3
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  child: Center(
-                    child: Image.network(
-                        "https://i0.hdslb.com/bfs/article/ffcdf252091508fb3e06b462d0f333134e07f90f.jpg@728w_896h_progressive.jpg"),
-                  ),
-                  height: 70,
-                  width: 70,
-                  color: Colors.amberAccent,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      " ？3 ？",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      " ？？？？？？？？？？",
-                      style: TextStyle(color: Colors.pinkAccent),
-                    )
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Divider(
-              color: Colors.black87,
-            ),
-            // 4
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  child: Center(
-                    child: Image.network(
-                        "https://i0.hdslb.com/bfs/article/ffcdf252091508fb3e06b462d0f333134e07f90f.jpg@728w_896h_progressive.jpg"),
-                  ),
-                  height: 70,
-                  width: 70,
-                  color: Colors.amberAccent,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      " ？4 ？",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      " ？？？？？？？？？？",
-                      style: TextStyle(color: Colors.pinkAccent),
-                    )
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Divider(
-              color: Colors.black87,
-            ),
-            // 5
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  child: Center(
-                    child: Image.network(
-                        "https://i0.hdslb.com/bfs/article/ffcdf252091508fb3e06b462d0f333134e07f90f.jpg@728w_896h_progressive.jpg"),
-                  ),
-                  height: 70,
-                  width: 70,
-                  color: Colors.amberAccent,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      " ？5 ？",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      " ？？？？？？？？？？",
-                      style: TextStyle(color: Colors.pinkAccent),
-                    )
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Divider(
-              color: Colors.black87,
-            ),
-            // 6
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  child: Center(
-                    child: Image.network(
-                        "https://i0.hdslb.com/bfs/article/ffcdf252091508fb3e06b462d0f333134e07f90f.jpg@728w_896h_progressive.jpg"),
-                  ),
-                  height: 70,
-                  width: 70,
-                  color: Colors.amberAccent,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      " ？6 ？",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      " ？？？？？？？？？？",
-                      style: TextStyle(color: Colors.pinkAccent),
-                    )
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Divider(
-              color: Colors.black87,
-            ),
-            // 7
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  child: Center(
-                    child: Image.network(
-                        "https://i0.hdslb.com/bfs/article/ffcdf252091508fb3e06b462d0f333134e07f90f.jpg@728w_896h_progressive.jpg"),
-                  ),
-                  height: 70,
-                  width: 70,
-                  color: Colors.amberAccent,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      " ？7 ？",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      " ？？？？？？？？？？",
-                      style: TextStyle(color: Colors.pinkAccent),
-                    )
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Divider(
-              color: Colors.black87,
-            ),
-            // 8
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  child: Center(
-                    child: Image.network(
-                        "https://i0.hdslb.com/bfs/article/ffcdf252091508fb3e06b462d0f333134e07f90f.jpg@728w_896h_progressive.jpg"),
-                  ),
-                  height: 70,
-                  width: 70,
-                  color: Colors.amberAccent,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      " ？8 ？",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      " ？？？？？？？？？？",
-                      style: TextStyle(color: Colors.pinkAccent),
-                    )
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Divider(
-              color: Colors.black87,
-            ),
-            // 9
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  child: Center(
-                    child: Image.network(
-                        "https://i0.hdslb.com/bfs/article/ffcdf252091508fb3e06b462d0f333134e07f90f.jpg@728w_896h_progressive.jpg"),
-                  ),
-                  height: 70,
-                  width: 70,
-                  color: Colors.amberAccent,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      " ？9 ？",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      " ？？？？？？？？？？",
-                      style: TextStyle(color: Colors.pinkAccent),
-                    )
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Divider(
-              color: Colors.black87,
-            ),
-            // endl
-          ],
+          children: dataList.map((item) {
+            return buildRow(
+                title: item.title,
+                subTitle: item.subTitle,
+                imageUrl: item.imageUrl);
+          }).toList(),
         ),
       ),
       bottomNavigationBar: BottomAppBar(
@@ -713,6 +177,49 @@ class _homePageState extends State<homePage> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  // 列表单项
+  Widget buildRow(
+      {required String imageUrl,
+      required String title,
+      required String subTitle}) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 5),
+      decoration: const BoxDecoration(
+          border: BorderDirectional(top: BorderSide(color: Colors.black12))),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            alignment: Alignment.center,
+            height: 70,
+            width: 70,
+            color: Colors.amberAccent,
+            child: Image.network(imageUrl),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: const TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 20,
+                ),
+              ),
+              const SizedBox(
+                height: 4,
+              ),
+              Text(
+                subTitle,
+                style: TextStyle(color: Colors.pinkAccent),
+              )
+            ],
+          )
+        ],
       ),
     );
   }
